@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tigrinho</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <main>
+        <h1>Fortune Tiger</h1>
+        <form id="form-sorteador">
+            <div>
+                <label for="numero-maximo">Número Da Aposta</label>
+                <input type="number" id="numero-maximo">
+            </div>
+            <button type="submit">Sortear Número</button>
+        </form>
+        <p class="descrição">
+            Se o número sorteador for o numero escolhido o tigrinho vai soltar a carta.
+        </p>
+        <div class="resultado-perda">
+            <p>
+                Você perdeu tudo , agora o tigrinho ta de porsche o resultado foi: <span id="resultado-sorteio-perda"></span>
+            </p>
+        </div>
+        <div class="resultado-ganho">
+            <p>
+                <span id="resultado-sorteio-ganho"> </span> Você ganhou ! mas o tigrinho faliu e n vai te pagar.
+            </p>
+        </div>
+    </main>
+    <script src="../src//scripts/main.js"></script>
+</body>
+</html>
