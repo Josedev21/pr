@@ -59,6 +59,10 @@ module.exports = function (grunt) {
                         {
                             match: 'ENDEREÇO_DO_CSS',
                             replacement: './styles/main.min.css'
+                        },
+                        {
+                            match: 'ENDEREÇO_DO_JS',
+                            replacement: './scripts/main.min.js'
                         }
                     ]
                 },
@@ -87,7 +91,16 @@ module.exports = function (grunt) {
         },
 
         /**apaga a pasta */
-        clean: ['prebuild']
+        clean: ['prebuild'],
+
+
+        uglify: {
+            target: {
+                files: {
+                    'dist/scripts/main.min.js': 'src/scripts/main.js'
+                }
+            }
+        }
     })
 
     /**Carregamento dos plugins */
@@ -96,11 +109,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks("grunt-contrib-htmlmin");
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     /**Começa observando o less:development */
     grunt.registerTask('default', ['watch']);
 
     /**começa observando o less:production */
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean']);
+    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
 
 } 

@@ -3,6 +3,7 @@
 @ColorTitle: #DAA520;
 @textColor: #fff;
 @ColorPerda: red;
+@ColorGanho: green;
 
 
 body {
@@ -28,9 +29,10 @@ main {
     color: @textColor;
 
     .descrição {
-        border-bottom: 2px solid #000;
+        border-bottom: 2px solid @ColorTitle;
         font-size: 0.90em;
         font-style: italic;
+        color: #000;
     }
 }
 
@@ -64,8 +66,15 @@ label {
     color: @textColor;
 }
 
-.resultado {
+.resultado-perda {
     background-color: @ColorPerda;
+    font-size: 0.85em;
+    border-radius: 10px;
+    display: none;
+}
+
+.resultado-ganho {
+    background-color: @ColorGanho;
     font-size: 0.85em;
     border-radius: 10px;
     display: none;
